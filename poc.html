@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>album finder</title>
+        <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <section class="jumbotron">
+
+                <header class="header">
+                    <h1>album finder</h1>
+                </header>
+
+                <section class="search">
+                    <div class="row"><div class="col-lg-6"><p><h2>search</h2></div></div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default search" aria-label="Search">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                            </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </section><!-- /.search -->
+
+                <section class="history">
+                    <div class="row"><div class="col-lg-6"><hr></div></div>
+                    <div class="row"><div class="col-lg-6"><p><h3>history</h3></div></div>
+
+                    <!-- 1 closed -->
+
+                    <div class="row row-closed">
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-default search" aria-label="Search">
+                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="col-md-10">
+                            Liquid Stranger - The Intergalactic Slapstick
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-default search" aria-label="Search">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2 open -->
+
+                    <div class="row row-open">
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-default search" aria-label="Search">
+                                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="col-md-10">
+                            ESKA - Eska
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-default search" aria-label="Search">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row container">
+                        <div class="col-md-12">
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=350367951/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://eskaonline.bandcamp.com/album/eska">ESKA by ESKA</a></iframe>
+                        </div>
+                    </div>
+                    <div class="row container">
+                        <div class="col-md-12">
+<iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=false&width=600&height=90&color=007FEB&layout=dark&size=medium&type=album&id=9535910&title=&app_id=1" width="700" height="90"></iframe> 
+                        </div>
+                    </div>
+
+                    <!-- 3 closed -->
+
+                    <div class="row row-closed">
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-default search" aria-label="Search">
+                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="col-md-10">
+                            Benjamin Clementine - At Least for Now
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-default search" aria-label="Search">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                </section><!-- /.history -->
+
+            </section><!-- /.jumbotron -->
+
+            <footer class="footer"></footer>
+
+        </div><!-- /.container -->
+
+        <script src="./assets/js/vendor/jquery.js"></script>
+        <script src="./assets/js/vendor/json2.js"></script>
+        <script src="./assets/js/vendor/underscore.js"></script>
+
+        <!-- Backbone depends on jQuery and Underscore, so included after -->
+        <script src="./assets/js/vendor/backbone.js"></script>
+        <script src="./assets/js/vendor/backbone.marionette.js"></script>
+
+    </body>
+</html>
