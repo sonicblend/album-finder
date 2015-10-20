@@ -102,9 +102,10 @@
         <!-- Backbone depends on jQuery and Underscore, so included after -->
         <script src="./assets/js/vendor/backbone.js"></script>
         <script src="./assets/js/vendor/backbone.marionette.js"></script>
+        <script src="./assets/js/app.js"></script>
+        <script src="./assets/js/entities/result.js"></script>
 
 <script type="text/javascript">
-    var Music = new Marionette.Application();
 //    Music.StaticView = Marionette.ItemView.extend({
 //        template: "#results-empty"
 //    }
@@ -112,12 +113,6 @@
 //    Music.ResultView = Marionette.ItemView.extend({
 //        template: "#results-open"
 //    });
-
-    Music.Result = Backbone.Model.extend();
-    Music.ResultCollection = Backbone.Collection.extend({
-        model: Music.Result
-    });
-
     Music.ResultItemView = Marionette.ItemView.extend({
         tagName: "li",
         template: "#results-closed",
@@ -128,15 +123,6 @@
         childView: Music.ResultItemView,
     });
 
-    Music.on("before:start", function(){
-        var RegionContainer = Marionette.LayoutView.extend({
-            el: "#app-container",
-            regions: {
-                main: "#main-region"
-            }
-        });
-        Music.regions = new RegionContainer();
-    });
     Music.on("start", function(){
 //        var eska = new Music.Result({
 //            query: "ESKA - Eska",
@@ -153,7 +139,7 @@
 //                id: "350367951",
 //            },
 //        });
-        var resultHistory = new Music.ResultCollection([{
+        var resultHistory = new Music.Entities.ResultCollection([{
                 query: "Liquid Stranger - The Intergalactic Slapstick",
                 deezer: {
                     link: "https://www.deezer.com/album/1017537",
