@@ -109,9 +109,23 @@
 //        template: "#results-empty"
 //    }
 
+//    Music.ResultView = Marionette.ItemView.extend({
+//        template: "#results-open"
+//    });
+
     Music.Result = Backbone.Model.extend();
-    Music.ResultView = Marionette.ItemView.extend({
-        template: "#results-closed"
+    Music.ResultCollection = Backbone.Collection.extend({
+        model: Music.Result
+    });
+
+    Music.ResultItemView = Marionette.ItemView.extend({
+        tagName: "li",
+        template: "#results-closed",
+    });
+    Music.ResultsView = Marionette.CollectionView.extend({
+        tagName: "ol",
+        className: "list-unstyled",
+        childView: Music.ResultItemView,
     });
 
     Music.on("before:start", function(){
@@ -124,25 +138,51 @@
         Music.regions = new RegionContainer();
     });
     Music.on("start", function(){
-        var eska = new Music.Result({
-            query: "ESKA - Eska",
-            deezer: {
-                artist: "Eska",
-                title: "Eska",
-                link: "http://www.deezer.com/album/9535910",
-                id: "9535910",
-            },
-            bandcamp: {
-                artist: "ESKA",
-                title: "ESKA",
-                link: "https://eskaonline.bandcamp.com/album/eska",
-                id: "350367951",
-            },
+//        var eska = new Music.Result({
+//            query: "ESKA - Eska",
+//            deezer: {
+//                artist: "Eska",
+//                title: "Eska",
+//                link: "http://www.deezer.com/album/9535910",
+//                id: "9535910",
+//            },
+//            bandcamp: {
+//                artist: "ESKA",
+//                title: "ESKA",
+//                link: "https://eskaonline.bandcamp.com/album/eska",
+//                id: "350367951",
+//            },
+//        });
+        var resultHistory = new Music.ResultCollection([{
+                query: "Liquid Stranger - The Intergalactic Slapstick",
+                deezer: {
+                    link: "https://www.deezer.com/album/1017537",
+                    id: "1017537",
+                },
+                bandcamp: {
+                    link: "https://liquidstranger.bandcamp.com/album/the-intergalactic-slapstick",
+                    id: "4283774662",
+                },
+            },{
+                query: "C Duncan – Architect",
+                deezer: {
+                    link: "https://www.deezer.com/album/10787960",
+                    id: "10787960",
+                },
+                bandcamp: {
+                    link: "not_really", // fake
+                    id: "1", // fake
+                },
+        }]);
+
+        var historyView = new Music.ResultsView({
+            collection: resultHistory,
         });
-        var eskaView = new Music.ResultView({
-            model: eska
-            });
-        Music.regions.main.show(eskaView);
+
+//        var eskaView = new Music.ResultView({
+//            model: eska
+//        });
+        Music.regions.main.show(historyView);
 //        var staticView = new Music.StaticView();
 //        Music.regions.main.show(staticView);
     });
