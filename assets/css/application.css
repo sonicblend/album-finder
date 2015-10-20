@@ -1,0 +1,10 @@
+body {
+    padding-top: 20px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ccc;
+}
+
+/* .search h2, .history h3 { display:none; } */
