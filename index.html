@@ -139,27 +139,7 @@
 //                id: "350367951",
 //            },
 //        });
-        var resultHistory = new Music.Entities.ResultCollection([{
-                query: "Liquid Stranger - The Intergalactic Slapstick",
-                deezer: {
-                    link: "https://www.deezer.com/album/1017537",
-                    id: "1017537",
-                },
-                bandcamp: {
-                    link: "https://liquidstranger.bandcamp.com/album/the-intergalactic-slapstick",
-                    id: "4283774662",
-                },
-            },{
-                query: "C Duncan – Architect",
-                deezer: {
-                    link: "https://www.deezer.com/album/10787960",
-                    id: "10787960",
-                },
-                bandcamp: {
-                    link: "not_really", // fake
-                    id: "1", // fake
-                },
-        }]);
+        var resultHistory = Music.request("contact:entities");
 
         var historyView = new Music.ResultsView({
             collection: resultHistory,
