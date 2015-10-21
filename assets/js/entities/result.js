@@ -43,7 +43,7 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
         }
     };
 
-    Music.reqres.setHandler("contact:entities", function(){
+    Music.reqres.setHandler("music:entities", function(){
         return API.getResultEntities();
     });
 });

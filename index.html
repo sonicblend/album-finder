@@ -104,6 +104,7 @@
         <script src="./assets/js/vendor/backbone.marionette.js"></script>
         <script src="./assets/js/app.js"></script>
         <script src="./assets/js/entities/result.js"></script>
+        <script src="./assets/js/apps/history/list/list_view.js"></script>
 
 <script type="text/javascript">
 //    Music.StaticView = Marionette.ItemView.extend({
@@ -113,15 +114,6 @@
 //    Music.ResultView = Marionette.ItemView.extend({
 //        template: "#results-open"
 //    });
-    Music.ResultItemView = Marionette.ItemView.extend({
-        tagName: "li",
-        template: "#results-closed",
-    });
-    Music.ResultsView = Marionette.CollectionView.extend({
-        tagName: "ol",
-        className: "list-unstyled",
-        childView: Music.ResultItemView,
-    });
 
     Music.on("start", function(){
 //        var eska = new Music.Result({
@@ -139,9 +131,10 @@
 //                id: "350367951",
 //            },
 //        });
-        var resultHistory = Music.request("contact:entities");
 
-        var historyView = new Music.ResultsView({
+        var resultHistory = Music.request("music:entities");
+
+        var historyView = new Music.HistoryApp.List.Results({
             collection: resultHistory,
         });
 
