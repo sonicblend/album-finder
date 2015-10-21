@@ -105,6 +105,7 @@
         <script src="./assets/js/app.js"></script>
         <script src="./assets/js/entities/history.js"></script>
         <script src="./assets/js/apps/history/list/list_view.js"></script>
+        <script src="./assets/js/apps/history/list/list_controller.js"></script>
 
 <script type="text/javascript">
 //    Music.StaticView = Marionette.ItemView.extend({
@@ -132,16 +133,11 @@
 //            },
 //        });
 
-        var queryHistory = Music.request("history:entities");
-
-        var historyView = new Music.HistoryApp.List.Results({
-            collection: queryHistory,
-        });
+        Music.HistoryApp.List.Controller.listHistory();
 
 //        var eskaView = new Music.ResultView({
 //            model: eska
 //        });
-        Music.regions.main.show(historyView);
 //        var staticView = new Music.StaticView();
 //        Music.regions.main.show(staticView);
     });
