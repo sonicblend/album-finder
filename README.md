@@ -4,5 +4,7 @@ A Marionette.js front-end to [MuSAPI](https://github.com/sonicblend/MuSAPI) Musi
 
 MuSAPI searches multiple sources for album previews, returning them as JSON, which album-finder presents as a single-page web application.
 
-The mock design looks like this:
+This is a work in progress - REST lookup & data persistence isn't currently implemented.
+
+The final app will look something like this:
 ![Static design](https://github.com/sonicblend/album-finder/blob/master/static.png)
