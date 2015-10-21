@@ -5,11 +5,11 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
     });
 
     // use CompositeView rather than CollectionView, to additionally display
-    // the #results-header template
+    // the #history-header template
     List.Results = Marionette.CompositeView.extend({
         tagName: "ol",
         className: "list-unstyled",
-        template: "#results-header",
+        template: "#history-header",
         childView: List.Result,
         childViewContainer: "#history",
     });
