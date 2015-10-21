@@ -53,7 +53,7 @@
 <script type="text/template" id="results-closed">
     <div class="row row-closed">
         <div class="col-md-1">
-            <button type="button" class="btn btn-default search" aria-label="Search">
+            <button type="button" class="btn btn-default js-show" aria-label="Open">
                 <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
             </button>
         </div>
@@ -71,7 +71,7 @@
 <script type="text/template" id="results-open">
     <div class="row row-open">
         <div class="col-md-1">
-            <button type="button" class="btn btn-default search" aria-label="Search">
+            <button type="button" class="btn btn-default js-show" aria-label="Close">
                 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
             </button>
         </div>
@@ -79,21 +79,25 @@
             <p><%- query %></p>
         </div>
         <div class="col-md-1">
-            <button type="button" class="btn btn-default search" aria-label="Search">
+            <button type="button" class="btn btn-default js-delete" aria-label="Delete">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
         </div>
     </div>
+<% if (bandcamp.not_found === undefined) { %>
     <div class="row container">
         <div class="col-md-12">
-            <!-- <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=<%- bandcamp.id %>/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://eskaonline.bandcamp.com/album/eska">ESKA by ESKA</a></iframe> -->
+            <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=<%- bandcamp.id %>/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="<%- bandcamp.link %>"><%- bandcamp.artist %> - <%- bandcamp.title %></a></iframe>
         </div>
     </div>
+<% } %>
+<% if (deezer.not_found === undefined) { %>
     <div class="row container">
         <div class="col-md-12">
-            <!-- <iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=false&width=600&height=90&color=007FEB&layout=dark&size=medium&type=album&id=<%- deezer.id %>&title=&app_id=1" width="700" height="90"></iframe> -->
+           <iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=false&width=600&height=90&color=007FEB&layout=dark&size=medium&type=album&id=<%- deezer.id %>&title=&app_id=1" width="700" height="90"><a href="<%- deezer.link %>"><%- deezer.artist %> - <%- deezer.title %></a></iframe>
         </div>
     </div>
+<% } %>
 </script><!-- /#results-open -->
 
         <script src="./assets/js/vendor/jquery.js"></script>
@@ -107,6 +111,8 @@
         <script src="./assets/js/entities/history.js"></script>
         <script src="./assets/js/apps/history/list/list_view.js"></script>
         <script src="./assets/js/apps/history/list/list_controller.js"></script>
+        <script src="./assets/js/apps/query/show/show_controller.js"></script>
+        <script src="./assets/js/apps/query/show/show_view.js"></script>
 
 <script type="text/javascript">
     Music.start();

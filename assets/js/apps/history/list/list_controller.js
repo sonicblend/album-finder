@@ -11,6 +11,10 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
                 queryHistory.remove(model);
             });
 
+            historyView.on("childview:history:show", function(childView, model){
+                Music.QueryApp.Show.Controller.showQuery(model);
+            });
+
             Music.regions.main.show(historyView);
         }
     };

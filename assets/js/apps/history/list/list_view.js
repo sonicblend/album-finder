@@ -7,6 +7,7 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
             "mouseenter": "toggleDelete",
             "mouseleave": "toggleDelete",
             "click button.js-delete": "deleteClicked",
+            "click button.js-show": "showClicked",
         },
 
         // hide delete button unless hovering over
@@ -14,9 +15,12 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
             this.$el.find("button.js-delete").toggle();
         },
 
+        showClicked: function(e){
+            this.trigger("history:show", this.model);
+        },
+
         // trigger controller to delete query
         deleteClicked: function(e){
-            e.stopPropagation(); // really needed?
             this.trigger("history:delete", this.model);
         },
 
