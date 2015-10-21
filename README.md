@@ -6,17 +6,20 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
 
 ## Progress
 
-- [x] Static version of site: view [preview](#design) / [html](https://github.com/sonicblend/album-finder/blob/master/static.html)
-- [x] Dynamic site initialised with pre-populated model
-- [x] Query results
-  - [x] View populated by model
-  - [ ] View as a composite model
-- [x] Search history
-  - [x] Search history delete entry
-  - [ ] Query results visible within search history
-- [ ] Data persistence
-- [ ] REST API lookup
-  - [ ] Add route to MuSAPI to provide results for all music services
+- [x] Static preview: view [preview](#design) / [html](https://github.com/sonicblend/album-finder/blob/master/static.html)
+- [x] Dynamic site
+  - [x] Model
+    - [x] Pre-populated from array (temporary)
+    - [ ] History data persistence
+  - [x] View
+    - [x] Search history view
+    - [x] Query results view
+      - [ ] View as a composite model
+      - [ ] View inline with search history results
+  - [x] Controller
+    - [x] Search history delete entry
+    - [ ] REST API lookup
+      - [ ] Dependency: Add route to MuSAPI to provide results for all music services
 
 ## Design
 
