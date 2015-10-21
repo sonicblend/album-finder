@@ -10,12 +10,10 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
 - [x] Dynamic site
   - [x] Model
     - [x] Pre-populated from array (temporary)
-    - [ ] History data persistence
+    - [ ] Search history data persistence
   - [x] View
-    - [x] Search history view
-    - [x] Query results view
-      - [ ] View as a composite model
-      - [ ] View inline with search history results
+    - [x] Query results
+    - [x] Search history
   - [x] Controller
     - [x] Search history delete entry
     - [ ] REST API lookup

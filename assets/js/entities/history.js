@@ -11,6 +11,7 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
     var initialiseHistory = function() {
         history = new Entities.ResultCollection([{
             id: 1,
+            closed: 1,
             query: "Liquid Stranger - The Intergalactic Slapstick",
             deezer: {
                 title: "The Intergalactic Slapstick",
@@ -26,6 +27,7 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
             },
         },{
             id: 2,
+            closed: 1,
             query: "C Duncan – Architect",
             deezer: {
                 title: "Architect",
