@@ -7,6 +7,10 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
                 collection: queryHistory,
             });
 
+            historyView.on("childview:history:delete", function(childView, model){
+                queryHistory.remove(model);
+            });
+
             Music.regions.main.show(historyView);
         }
     };
