@@ -39,5 +39,14 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
         template: "#history-header",
         childView: List.Result,
         childViewContainer: "#history",
+
+        onChildviewHistoryDelete: function() {
+            if(this.collection.length==1){
+                this.$el.fadeOut(1000, function(){
+                    // hide history container if there's nothing to display?
+                    //this.remove();
+                });
+            }
+        },
     });
 });
