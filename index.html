@@ -103,7 +103,7 @@
         <script src="./assets/js/vendor/backbone.js"></script>
         <script src="./assets/js/vendor/backbone.marionette.js"></script>
         <script src="./assets/js/app.js"></script>
-        <script src="./assets/js/entities/result.js"></script>
+        <script src="./assets/js/entities/history.js"></script>
         <script src="./assets/js/apps/history/list/list_view.js"></script>
 
 <script type="text/javascript">
@@ -132,10 +132,10 @@
 //            },
 //        });
 
-        var resultHistory = Music.request("music:entities");
+        var queryHistory = Music.request("history:entities");
 
         var historyView = new Music.HistoryApp.List.Results({
-            collection: resultHistory,
+            collection: queryHistory,
         });
 
 //        var eskaView = new Music.ResultView({

@@ -5,11 +5,11 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
         model: Entities.Result
     });
 
-    var resultHistory;
+    var history;
 
     // TODO: fetch from server
     var initialiseHistory = function() {
-        resultHistory = new Entities.ResultCollection([{
+        history = new Entities.ResultCollection([{
             id: 1,
             query: "Liquid Stranger - The Intergalactic Slapstick",
             deezer: {
@@ -35,15 +35,15 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
     };
 
     var API = {
-        getResultEntities: function(){
-            if(resultHistory === undefined){
+        getHistoryEntities: function(){
+            if(history === undefined){
                 initialiseHistory();
             }
-            return resultHistory;
+            return history;
         }
     };
 
-    Music.reqres.setHandler("music:entities", function(){
-        return API.getResultEntities();
+    Music.reqres.setHandler("history:entities", function(){
+        return API.getHistoryEntities();
     });
 });
