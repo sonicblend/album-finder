@@ -18,6 +18,8 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
     - [x] Search history delete entry
     - [ ] REST API lookup
       - [ ] Dependency: Add route to MuSAPI to provide results for all music services
+  - [ ] Routing
+    - [ ] Routing for non-existant pages
 
 ## Design
 
