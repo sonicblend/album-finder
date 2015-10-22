@@ -16,14 +16,35 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
     - [x] Search history
   - [x] Controller
     - [x] Search history delete entry
-    - [ ] Add new query to model
+    - [ ] Add new query to history collection
     - [ ] REST API lookup
       - [x] Dependency: Scrape Bandcamp for id, artist name etc
       - [ ] Dependency: Add route to MuSAPI to provide results for all music services
+    - [ ] Display welcome text when history collection empty
   - [ ] Routing
     - [ ] Routing for non-existant pages
+  - [ ] Host site
 
-## Design
+## Screenshots of current version
 
-The final app will look something like this:
-![Static design](https://github.com/sonicblend/album-finder/blob/master/static.png)
+User revists site with search history visible:
+
+![User revists site with search history visible](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_closed.png)
+
+User opens an item from their history:
+
+![User opens an item from their history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_open.png)
+
+User deletes an item from their history:
+
+![User deletes an item from their history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_delete_hover.png)
+
+User deletes all items from history:
+
+![User deletes all items from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_no_history.png)
+
+## Historic screeshots
+
+Static design:
+
+![Static design](https://github.com/sonicblend/album-finder/blob/master/screenshots/static.png)
