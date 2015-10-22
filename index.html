@@ -16,28 +16,32 @@
                 </header>
 
                 <section class="search">
-                    <div class="row"><div class="col-lg-6"><p><h2>search</h2></div></div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default search" aria-label="Search">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                </button>
-                            </span>
-                            </div><!-- /input-group -->
-                        </div><!-- /.col-lg-6 -->
-                    </div><!-- /.row -->
-                </section><!-- /.search -->
+                    <div id="search-region"></div>
+                </section>
 
                 <section class="results" id="app-container">
                     <div id="main-region"></div>
-                </section><!-- /.results -->
+                </section>
 
             </section><!-- /.jumbotron -->
             <footer class="footer"></footer>
         </div><!-- /.container -->
+
+<script type="text/template" id="search">
+    <div class="row"><div class="col-lg-6"><p><h2>search</h2></div></div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+            <input type="text" class="form-control" id="js-search-text" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" id="js-search" aria-label="Search">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+            </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+</script><!-- /search -->
 
 <script type="text/template" id="results-empty">
     <h3>welcome</h3>
@@ -117,6 +121,8 @@
         <script src="./assets/js/entities/history.js"></script>
         <script src="./assets/js/apps/history/list/list_view.js"></script>
         <script src="./assets/js/apps/history/list/list_controller.js"></script>
+        <script src="./assets/js/apps/search/input_view.js"></script>
+        <script src="./assets/js/apps/search/input_controller.js"></script>
 
 <script type="text/javascript">
     Music.start();

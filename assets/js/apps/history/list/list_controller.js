@@ -16,10 +16,10 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
                 model.attributes.closed = model.attributes.closed ? 0 : 1;
 
                 // hmm, should the view detect the change and refresh?
-                Music.regions.main.show(historyView, {forceShow: true});
+                Music.regions.history.show(historyView, {forceShow: true});
             });
 
-            Music.regions.main.show(historyView);
+            Music.regions.history.show(historyView);
         }
     };
 });

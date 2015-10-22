@@ -5,7 +5,8 @@ Music.on("before:start", function(){
         el: "#app-container",
 
         regions: {
-            main: "#main-region"
+            search: "#search-region",
+            history: "#main-region"
         },
     });
 
