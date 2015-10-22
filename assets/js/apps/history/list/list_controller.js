@@ -8,7 +8,7 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
             });
 
             historyView.on("childview:history:delete", function(childView, model){
-                queryHistory.remove(model);
+                model.destroy();
             });
 
             historyView.on("childview:history:show", function(childView, model){

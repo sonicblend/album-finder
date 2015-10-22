@@ -1,15 +1,19 @@
 Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
-    Entities.Result = Backbone.Model.extend();
+    Entities.Result = Backbone.Model.extend({
+        urlRoot: "history",
+    });
+
+    Entities.configureStorage("Music.Entities.Result");
 
     Entities.ResultCollection = Backbone.Collection.extend({
+        url: "history",
         model: Entities.Result
     });
 
-    var history;
+    Entities.configureStorage("Music.Entities.ResultCollection");
 
-    // TODO: fetch from server
     var initialiseHistory = function() {
-        history = new Entities.ResultCollection([{
+        var history = new Entities.ResultCollection([{
             id: 1,
             closed: 1,
             query: "Liquid Stranger - The Intergalactic Slapstick",
@@ -39,12 +43,20 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
                 not_found: 1,
             },
         }]);
+
+        history.forEach(function(result){
+            result.save();
+        });
+        return history;
     };
 
     var API = {
         getHistoryEntities: function(){
-            if(history === undefined){
-                initialiseHistory();
+            var history = new Entities.ResultCollection();
+            history.fetch();
+            if(history.length === 0){
+                // create some search history for the demo
+                return initialiseHistory();
             }
             return history;
         }
