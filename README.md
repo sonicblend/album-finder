@@ -16,7 +16,9 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
     - [x] Search history
   - [x] Controller
     - [x] Search history delete entry
+    - [ ] Add query to model
     - [ ] REST API lookup
+      - [x] Dependency: Scrape Bandcamp for id, artist name etc
       - [ ] Dependency: Add route to MuSAPI to provide results for all music services
 
 ## Design
