@@ -6,7 +6,7 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
 
 ## Progress
 
-- [x] Static preview: view [preview](https://github.com/sonicblend/album-finder/blob/master/screenshots/static.png)
+- [x] Static preview: [see history](https://github.com/sonicblend/album-finder/blob/master/screenshots/static.png)
 - [x] Dynamic site
   - [x] Model
     - [x] Pre-populated from array (temporary)
