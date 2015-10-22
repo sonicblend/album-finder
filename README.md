@@ -6,7 +6,7 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
 
 ## Progress
 
-- [x] Static preview: view [preview](#design) / [html](https://github.com/sonicblend/album-finder/blob/master/static.html)
+- [x] Static preview: view [preview](https://github.com/sonicblend/album-finder/blob/master/screenshots/static.png)
 - [x] Dynamic site
   - [x] Model
     - [x] Pre-populated from array (temporary)
@@ -35,16 +35,14 @@ User opens an item from their history:
 
 ![User opens an item from their history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_open.png)
 
-User deletes an item from their history:
+User hovers over item to display delete button:
 
-![User deletes an item from their history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_delete_hover.png)
+![User hovers over item to display delete button](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_delete_hover.png)
+
+User deletes item from history:
+
+![User deletes item from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_deleted.png)
 
 User deletes all items from history:
 
 ![User deletes all items from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_no_history.png)
-
-## Historic screeshots
-
-Static design:
-
-![Static design](https://github.com/sonicblend/album-finder/blob/master/screenshots/static.png)
