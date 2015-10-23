@@ -1,33 +1,30 @@
 Music.module("SearchApp", function(Search, Music, Backbone, Marionette, $, _){
 
     function search(e, query) {
-        var history = Music.request("history:entities");
-        var newQuery = new Music.Entities.Result({
-            model: history,
-        });
-        // TODO: Query REST interface, rather than make them up
-        var data = {
-            closed: 1,
-            query: query,
-            deezer: {
-                not_found: 1,
-            },
-            bandcamp: {
-                not_found: 1,
-            },
-        };
-        // calculate new id - server would normally generate this
-        if (history.length > 0) {
-            var highestId = history.max(function(h){ return h.id; }).get("id");
-            data.id = highestId + 1;
-        }
-        else {
-            data.id = 1;
-        }
-        if (newQuery.save(data)) {
-            // refresh history viewl - erm, seems to work
-            Music.HistoryApp.List.Controller.listHistory();
-        }
+        var newQuery = new Music.Entities.Result({});
+
+        newQuery.fetch(query, { success: function() {
+            console.log("result: ", newQuery.toJSON());
+
+            //// don't save. save means performing a PUT (if id present) or POST against MuSAPI.
+
+            //newQuery.save({}, {
+            //    success: function(){ console.log("newQuery saved", newQuery); addToHistory(); },
+            //    error: function(){ console.log("aww shucks: ", newQuery); }
+            //});
+
+            addToHistory();
+
+            function addToHistory() {
+                var history = Music.request("history:entities");
+                history.create(newQuery, { success: success });
+            }
+            function success(collection, response) {
+                // refresh history viewl - erm, seems to work
+                Music.HistoryApp.List.Controller.listHistory();
+            }
+
+        }});
     }
 
     Search.Input = Marionette.ItemView.extend({
