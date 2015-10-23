@@ -27,7 +27,7 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
 
 ## Screenshots of current version
 
-User searches for an item:
+User searches for a couple albums:
 
 ![User searches for an item](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_search.png)
 
@@ -35,18 +35,14 @@ User revisits site with search history preserved:
 
 ![User revists site with search history visible](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_closed.png)
 
-User opens an item from their history:
-
-![User opens an item from their history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_open.png)
-
-User hovers over item to display delete button:
+User hovers over album to see the delete button:
 
 ![User hovers over item to display delete button](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_delete_hover.png)
 
-User deletes item from history:
+User clears album from history:
 
 ![User deletes item from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_deleted.png)
 
-User deletes all items from history:
+User clears all history:
 
 ![User deletes all items from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_no_history.png)
