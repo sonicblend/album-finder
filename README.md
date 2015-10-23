@@ -23,7 +23,7 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
     - [ ] Display welcome text when history collection empty
   - [ ] Routing
     - [ ] Routing for non-existant pages
-  - [ ] Host site
+  - [x] Host site
 
 ## Screenshots of current version
 
