@@ -14,5 +14,6 @@ Music.on("before:start", function(){
 });
 
 Music.on("start", function(){
+    Music.SearchApp.New.Controller.showSearch();
     Music.HistoryApp.List.Controller.listHistory();
 });

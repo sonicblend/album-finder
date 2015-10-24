@@ -1,17 +1,5 @@
-Music.module("SearchApp", function(Search, Music, Backbone, Marionette, $, _){
-
-    function search(e, query) {
-        var newQuery = new Music.Entities.Result({});
-
-        newQuery.fetch(query, { success: function() {
-            console.log("result: ", newQuery.toJSON());
-
-            var history = Music.request("history:entities");
-            history.create(newQuery);
-        }});
-    }
-
-    Search.Input = Marionette.ItemView.extend({
+Music.module("SearchApp.New", function(New, Music, Backbone, Marionette, $, _){
+    New.Search = Marionette.ItemView.extend({
         el: "#search-region",
         template: "#search",
 
@@ -28,9 +16,9 @@ Music.module("SearchApp", function(Search, Music, Backbone, Marionette, $, _){
 
         onClick: function (e){
             var query = this.ui.input.val().trim();
-            this.ui.input.val('');
             if (query) {
-                search(e, query);
+                this.ui.input.val('');
+                New.Controller.fetch(query);
             }
         },
         onKeyPress: function(e){
@@ -38,11 +26,8 @@ Music.module("SearchApp", function(Search, Music, Backbone, Marionette, $, _){
             var ENTER_KEY = 13;
             if (e.which === ENTER_KEY && query) {
                 this.ui.input.val('');
-                search(e, query);
+                New.Controller.fetch(query);
             }
         },
     });
-
-    var staticView = new Search.Input();
-    staticView.render();
 });
