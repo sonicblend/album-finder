@@ -47,8 +47,7 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
         onChildviewHistoryDelete: function() {
             if(this.collection.length==1){
                 this.$el.fadeOut(1000, function(){
-                    // hide history container if there's nothing to display?
-                    //this.remove();
+                    this.remove();
                 });
             }
         },
