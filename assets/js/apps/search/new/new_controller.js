@@ -1,8 +1,8 @@
 Music.module("SearchApp.New", function(New, Music, Backbone, Marionette, $, _){
     New.Controller = {
         showSearch: function(){
+            // nothing to render, it's a template-less ItemView
             var staticView = new New.Search();
-            staticView.render();
         },
         fetch: function(query){
             var newQuery = new Music.Entities.Result({});
