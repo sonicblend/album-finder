@@ -15,7 +15,7 @@
                     <h1>album finder</h1>
                 </header>
 
-                <section class="search">
+                <section class="search" id="search-region">
                     <div class="row"><div class="col-lg-6"><p><h2>search</h2></div></div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -51,7 +51,6 @@
 </script><!-- /#results-header -->
 
 <script type="text/template" id="results-closed">
-<% if (closed){ %>
     <div class="row row-closed">
         <div class="col-md-1">
             <button type="button" class="btn btn-default js-show" aria-label="Open">
@@ -67,7 +66,9 @@
             </button>
         </div>
     </div>
-<% }else{%>
+</script><!-- /#results-closed -->
+
+<script type="text/template" id="results-open">
     <div class="row row-open">
         <div class="col-md-1">
             <button type="button" class="btn btn-default js-show" aria-label="Close">
@@ -101,8 +102,7 @@
         </div>
     </div>
 <% } %>
-<% } %>
-</script><!-- /#results-closed -->
+</script><!-- /#results-open -->
 
         <script src="./assets/js/vendor/jquery.js"></script>
         <script src="./assets/js/vendor/json2.js"></script>

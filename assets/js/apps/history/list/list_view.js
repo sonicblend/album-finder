@@ -1,7 +1,13 @@
 Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _){
     List.Result = Marionette.ItemView.extend({
         tagName: "li",
-        template: "#results-closed",
+        getTemplate: function(){
+            if (this.model.attributes.closed){
+                return "#results-closed";
+            } else {
+                return "#results-open";
+            }
+        },
 
         events: {
             "mouseenter": "toggleDelete",
@@ -43,13 +49,5 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
         template: "#history-header",
         childView: List.Result,
         childViewContainer: "#history",
-
-        onChildviewHistoryDelete: function() {
-            if(this.collection.length==1){
-                this.$el.fadeOut(1000, function(){
-                    this.remove();
-                });
-            }
-        },
     });
 });
