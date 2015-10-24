@@ -14,9 +14,7 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
             historyView.on("childview:history:show", function(childView, model){
                 // toggle open/close on model, and re-display
                 model.attributes.closed = model.attributes.closed ? 0 : 1;
-
-                // hmm, should the view detect the change and refresh?
-                Music.regions.history.show(historyView, {forceShow: true});
+                childView.trigger('change:childModel', childView);
             });
 
             Music.regions.history.show(historyView);

@@ -49,5 +49,12 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
         template: "#history-header",
         childView: List.Result,
         childViewContainer: "#history",
+
+        childEvents: {
+            "change:childModel": "childModelChanged",
+        },
+        childModelChanged: function(e, childView){
+            childView.render();
+        },
     });
 });
