@@ -1,7 +1,8 @@
 Music.module("SearchApp.New", function(New, Music, Backbone, Marionette, $, _){
-    // Template-less ItemView
     New.Search = Marionette.ItemView.extend({
         el: "#search-region",
+        // Template-less ItemView
+        template: false,
 
         // UI bindings create cached attributes that
         // point to jQuery selected objects
