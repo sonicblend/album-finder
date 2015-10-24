@@ -6,24 +6,8 @@ Music.module("SearchApp", function(Search, Music, Backbone, Marionette, $, _){
         newQuery.fetch(query, { success: function() {
             console.log("result: ", newQuery.toJSON());
 
-            //// don't save. save means performing a PUT (if id present) or POST against MuSAPI.
-
-            //newQuery.save({}, {
-            //    success: function(){ console.log("newQuery saved", newQuery); addToHistory(); },
-            //    error: function(){ console.log("aww shucks: ", newQuery); }
-            //});
-
-            addToHistory();
-
-            function addToHistory() {
-                var history = Music.request("history:entities");
-                history.create(newQuery, { success: success });
-            }
-            function success(collection, response) {
-                // refresh history viewl - erm, seems to work
-                Music.HistoryApp.List.Controller.listHistory();
-            }
-
+            var history = Music.request("history:entities");
+            history.create(newQuery);
         }});
     }
 
