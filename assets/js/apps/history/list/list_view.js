@@ -44,6 +44,7 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
     // use CompositeView rather than CollectionView, to additionally display
     // the #history-header template
     List.Results = Marionette.CompositeView.extend({
+        id: "history",
         tagName: "ol",
         className: "list-unstyled",
         template: "#history-header",
@@ -56,5 +57,11 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
         childModelChanged: function(e, childView){
             childView.render();
         },
+    });
+
+    // Empty search history view
+    List.StaticView = Marionette.ItemView.extend({
+        id: "welcome",
+        template: "#results-empty",
     });
 });
