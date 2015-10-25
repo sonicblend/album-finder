@@ -1,6 +1,5 @@
 Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
     Entities.Result = Backbone.Model.extend({
-        // would be nice to not hardcode this...
         urlRoot: "/search",
 
         defaults: {
