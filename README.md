@@ -27,22 +27,18 @@ MuSAPI searches multiple sources for album previews and returns them as JSON. al
 
 ## Screenshots of current version
 
+User visits site for first time:
+
+![User visits site for first time](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_welcome.png)
+
 User searches for a couple albums:
 
-![User searches for an item](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_search.png)
+![User searches for a couple albums](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_closed.png)
 
-User revisits site with search history preserved:
+User opens query result to view previews, when found - note the delete icon that appears when hovering over:
 
-![User revists site with search history visible](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_closed.png)
+![User opens query result to view previews, when found](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_history_open.png)
 
-User hovers over album to see the delete button:
+User deletes a result:
 
-![User hovers over item to display delete button](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_delete_hover.png)
-
-User clears album from history:
-
-![User deletes item from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_deleted.png)
-
-User clears all history:
-
-![User deletes all items from history](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_no_history.png)
+![User deletes the query](https://github.com/sonicblend/album-finder/blob/master/screenshots/album_finder_deleted.png)
