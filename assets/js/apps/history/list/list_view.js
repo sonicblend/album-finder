@@ -45,11 +45,10 @@ Music.module("HistoryApp.List", function(List, Music, Backbone, Marionette, $, _
     // the #history-header template
     List.Results = Marionette.CompositeView.extend({
         id: "history",
-        tagName: "ol",
-        className: "list-unstyled",
+        tagName: "div",
         template: "#history-header",
         childView: List.Result,
-        childViewContainer: "#history",
+        childViewContainer: "#history-list",
 
         childEvents: {
             "change:childModel": "childModelChanged",
