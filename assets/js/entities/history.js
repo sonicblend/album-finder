@@ -1,6 +1,6 @@
 Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
     Entities.Result = Backbone.Model.extend({
-        urlRoot: "/search",
+        urlRoot: "/api/v1/album",
 
         defaults: {
             closed: 1,
@@ -9,7 +9,7 @@ Music.module("Entities", function(Entities, Music, Backbone, Marionette, $, _){
         fetch: function (query, options) {
             options = options || {};
             if (options.url === undefined) {
-                options.url = this.urlRoot + "/" + query;
+                options.url = this.urlRoot + "/?q=" + query;
             }
 
             return Backbone.Model.prototype.fetch.call(this, options);
